@@ -26,8 +26,7 @@ We then go through the dictionary of grouped vertices, each item of which is tur
 - Then we come to the third check - defining, if one of the vertices is already in group and the other one is an 'orphan'. In this case we just add the 'orphan' vertice into the group and the same for the edge we examine. <br>
 - If no condition has been satisfied yet, we consider our vertices to be in two different groups - so we call the uniting function. 
 
-<i>And that's all.<i>
-
+<i>And that's all.</i>
 
 
 
