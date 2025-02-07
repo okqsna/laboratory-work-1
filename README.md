@@ -11,7 +11,22 @@ Then we extract edges, sort them by weight which is needed for algorithm's insta
 2 dictionaries mstk_v and mstk - dictionaries that contain information about vertices and edges
 in minimum spanning tree and update it as algorithm is being performed.
 
-#### Starting the algorithm
+#### Additional function for uniting groups
+As we perform Kruskal's algorithm, we group vertices and edges according to their connections and the weights of the connections. But when we come across the egde, which connects two vertices that are in different groups - we need to unite those two groups into one (actually, we just add the smaller one into the bigger one). <br>
+So, the  `key_1` property gets the key of group in dictionary, to which we are going to add the group marked as `key_2` in the same dictionary (basically, it applies to the both vertices dict and edges dict) <br>
+
+#### The actual algorithm
+So, as we have all the edges sorted in ascending order, we iterate through them. <br>
+For each iteration we have an edge `(v, u)`. <br>
+We then go through the dictionary of grouped vertices, each item of which is turned into a tuple `(group_n, [vertices])`, and check, if the `v` vertice is already in any of the groups. If it is - we pass the key of the group to the `key_0`. The same we do for the `u` vertice and `key_1` var. <br>
+
+##### Going through conditions
+- If we discover, that none of the vertices is defined by a group, we create a new one for them both - the same we do for the edge in `mstk` dict.<br>
+- If this is not our case, we check whether both of the vertices are in the same group - if they are, by adding this edge to our group we would create a cycle and ruin the spanning tree - therefore we simply skip this edge. <br>
+- Then we come to the third check - defining, if one of the vertices is already in group and the other one is an 'orphan'. In this case we just add the 'orphan' vertice into the group and the same for the edge we examine. <br>
+- If no condition has been satisfied yet, we consider our vertices to be in two different groups - so we call the uniting function. 
+
+<i>And that's all.<i>
 
 
 
