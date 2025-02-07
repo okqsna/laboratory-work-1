@@ -21,8 +21,8 @@ in minimum spanning tree and update it as algorithm is being performed.
 ### Bellman-Ford algorithm
 The Bellman-Ford algorithm is an algorithm that computes 
 the shortest paths <br> from a single source vertex to all other vertices in a weighted digraph.
-Implementation details
-#### At the beggining function receives randomly generated graph, node to start algorithm performence from and the sign to show the distances in written form.
+#### Implementation details
+At the beggining function receives randomly generated graph, node to start algorithm performence from and the sign to show the distances in written form.
 
 Then we extract edges, nodes, start node and initialize distance_dict - dictionary that contains information about distances, with node as keys and distance as values.
 
